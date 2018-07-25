@@ -19,7 +19,7 @@ Build an application which will have 2 resources: Products and Articles. Each re
 
 In addition, you will also have additional routes which will render **HTML** to the user. You will harness the power of the **Handlebars Template Engine** with express using [handlebars-express](https://github.com/ericf/express-handlebars) to build your templates and have them be dynamic. These templates should go in a directory called **templates**.
 
-Each of your resources will have it's own module in charge of it's own data. This module should have helper methods for retreiving data. Keep these files in a directory named **db**.
+Each of your resources will have its own module in charge of its own data. This module should have helper methods for retreiving data. Keep these files in a directory named **db**.
 
 *note: we are not using a database, having a folder called db. Later we will come back to this exercise and integrate a database. With tests already written and a db module, the refactor should go smoothly.*
 
@@ -47,7 +47,7 @@ Each of your resources will have it's own module in charge of it's own data. Thi
     - If not **successful** then send the user back to the **new** product route, `/products/:id/edit` and some way to communicate the error back to the user via templating.
 
 `/products/:id`
-- `DELETE` removes a product by it's **id**.
+- `DELETE` removes a product by its **id**.
   - If **successful** then redirect the user back to the `/products` page and some way to communicate to the user that this action was successful.
   - If not **successful** then send the user back to the **new** product route, `/products/:id`, where `:id` is the product that was just edited and a message that this action was unsucessful.
 
@@ -83,7 +83,7 @@ Inside of your templates directory you should have the templates below in a dire
     - from this request you will save your data as `{ title: String, body: String, author: String, urlTitle: String }`
       - **title** is a unique identifier for this item.
       - **urlTitle** is similar to the **title** that was passed in but instead is a URL Encoded version. *Javascript has a native way to url-encode strings*.
-        **example:** If given a title of `"The Best Magpie Developer of 2016"`, it's url-encoded equivilent is `"The%20Best%20Magpie%20Developer%20of%202016"`.
+        **example:** If given a title of `"The Best Magpie Developer of 2016"`, its url-encoded equivilent is `"The%20Best%20Magpie%20Developer%20of%202016"`.
     - If **successful** then redirect the user back to the `/articles` route.
     - If not **successful** then send the user back to the **new** article route, `/articles/new` and some way to communicate the error back to the user via templating.
 
@@ -95,7 +95,7 @@ Inside of your templates directory you should have the templates below in a dire
     - If not **successful** then send the user back to the **new** article route, `/article/:title/edit` and some way to communicate the error back to the user via templating.
 
 `/articles/:title`
-- `DELETE` removes a article by it's **title**.
+- `DELETE` removes a article by its **title**.
   - If **successful** then redirect the user back to the `/articles` page and some way to communicate to the user that this action was successful.
   - If not **successful** then send the user back to the **new** article route, `/article/:title`, where `:title` is the article that was just edited and a message that this action was unsucessful.
 
@@ -130,13 +130,13 @@ Here are some middleware code for you to implement.
 
 **Analytics Tracker**
   - Scope: All incoming requests.
-    - log to a file all uri that are requested. we need each request on it's own line
+    - log to a file all uri that are requested. we need each request on its own line
       - format: `[method] [uri] [timestamp]`
       - file location: all logs should go into a directory called **logs** and end with the `.log` extension
       - file name: the logs should be separated per day, please figure out a way to create a nice file name which displays date. e.g. `2016.01-17.13-45-06.log`
 
 **Payload Validation**
-  - Scope: Each Resource having it's own validator.
+  - Scope: Each Resource having its own validator.
 
 **Check headers on Articles**
   - Scope: Incoming requests to any `/articles` route.
