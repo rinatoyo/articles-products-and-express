@@ -95,7 +95,7 @@ Inside of your templates directory you should have the templates below in a dire
     - If not **successful** then send the user back to the **new** article route, `/article/:title/edit` and some way to communicate the error back to the user via templating.
 
 `/articles/:title`
-- `DELETE` removes a article by its **title**.
+- `DELETE` removes an article by its **title**.
   - If **successful** then redirect the user back to the `/articles` page and some way to communicate to the user that this action was successful.
   - If not **successful** then send the user back to the **new** article route, `/article/:title`, where `:title` is the article that was just edited and a message that this action was unsucessful.
 
