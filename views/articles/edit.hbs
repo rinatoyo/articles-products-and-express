@@ -1,0 +1,11 @@
+{{!-- put --}}
+<a href="/">Home</a>
+<a href="/articles">Go Back to List</a>
+
+<form action="/articles/{{title}}?_method=PUT" method="POST">
+    Title: {{title}}<br>
+    Body: <input type="text" name="name" value="{{body}}"><br>
+    Author: $<input type="text" name="price" value="{{author}}"><br>
+    URL: <input type="text" name="inventory" value="{{urlTitle}}"><br>
+    <input type="submit" value="Edit Article">
+</form>

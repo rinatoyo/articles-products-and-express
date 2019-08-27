@@ -1,16 +1,18 @@
 {{!-- get  --}}
 <a href="/">Home</a>
 <a href="/products">Go Back to List</a>
-<h2>Current Item</h2>
+
+<h2>Current Product</h2>
 <h3>Name: {{name}}</h3>
 <span>ID: #{{id}}</span><br>
 <span>Price: ${{price}}</span><br>
 <span>Inventory: {{inventory}}</span><br>
+
 <form action="/products/{{id}}/edit" method="GET">
     <input type="submit" value="Edit">
 </form>
 
 <form action="/products/{{id}}?_method=DELETE" method="POST">
     <input type="hidden" name='id' value={{id}}>
-    <input type="submit" value='Delete Item'>
+    <input type="submit" value='Delete Product'>
 </form>

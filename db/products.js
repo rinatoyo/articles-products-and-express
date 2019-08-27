@@ -1,32 +1,20 @@
 //product list skeleton for POST
 let productList = {
   products: []
-  // message: "",
-  // showMessage: false
 };
 
 //set first product ID
 let idNumber = 1;
 
-//product POST function
+//create product
 function create(obj) {
   obj.id = idNumber;
   productList.products.push(obj);
   idNumber++;
-  // const hasKeys = obj.name && obj.price && obj.inventory;
-  // console.log("key", hasKeys);
-  // if (hasKeys) {
-  //   obj.id = idNumber;
-  //   productList.products.push(obj);
-  //   idNumber++;
-  //   productList.message = "{success: true}";
-  //   productList.showMessage = true;
-  // } else {
-  //   productList.message = "{success: false}";
-  //   productList.showMessage = true;
-  // }
+  return productList.products;
 }
 
+//get product by ID number in product list
 function getProd(paramId) {
   let lengthOfProdList = productList.products.length;
   for (let i = 0; i < lengthOfProdList; i++) {
@@ -36,6 +24,7 @@ function getProd(paramId) {
   }
 }
 
+//edit product list by ID number
 function edit(id, name, price, inventory) {
   let item = getProd(id);
   if (id === item.id) {
@@ -46,9 +35,9 @@ function edit(id, name, price, inventory) {
   return item;
 }
 
+//delete product by ID number
 function deleteItem(reqId) {
   let deleteObj = getProd(reqId);
-  console.log("delete object", deleteObj);
   let itemIndex = productList.products.indexOf(deleteObj);
   productList.products.splice(itemIndex, 1);
 }
@@ -59,6 +48,7 @@ function retrieveAll() {
 }
 
 module.exports = {
+  productList,
   create,
   getProd,
   edit,

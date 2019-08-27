@@ -1,0 +1,18 @@
+{{!-- get  --}}
+<a href="/">Home</a>
+<a href="/articles">Go Back to List</a>
+
+<h2>Current Article</h2>
+<h3>Title: {{title}}</h3>
+<span>Body: {{body}}</span><br>
+<span>Author: {{author}}</span><br>
+<span>URL: {{urlTitle}}</span><br>
+
+<form action="/articles/{{title}}/edit" method="GET">
+    <input type="submit" value="Edit">
+</form>
+
+<form action="/products/{{title}}?_method=DELETE" method="POST">
+    <input type="hidden" name='title' value={{title}}>
+    <input type="submit" value='Delete Article'>
+</form>

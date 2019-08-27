@@ -4,11 +4,14 @@
         <h2>List of Products</h2>
         <a href="/products/new">Create New</a>
 
+
         {{#each products}}
         <h3>Name: <a href="/products/{{id}}">{{name}}</a></h3>
         <span>Price: ${{price}}</span><br>
         <span>Inventory: {{inventory}}</span><br>
         {{/each}}
+
+
     </div>
 
 </body>
