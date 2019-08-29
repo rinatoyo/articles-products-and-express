@@ -2,23 +2,28 @@ let articleList = {
   articles: []
 };
 
-//set first product ID
-// let idNumber = 1;
+let urlTitle = null;
 
-//product POST function
+//article POST function
 function create(obj) {
-  // obj.id = idNumber;
-  console.log("obj in create func", obj);
+  obj.urlTitle = obj.title.replace(/ /g, "-");
   articleList.articles.push(obj);
-  // idNumber++;
-  console.log("inside my articles array", articleList.articles);
   return articleList.articles;
 }
 
 function getArt(paramTitle) {
+  let formattedTitle = paramTitle
+    .split(" ")
+    .join("")
+    .toLowerCase();
   let lengthOfArticles = articleList.articles.length;
   for (let i = 0; i < lengthOfArticles; i++) {
-    if (articleList.articles[i].title === paramTitle) {
+    if (
+      articleList.articles[i].title
+        .split(" ")
+        .join("")
+        .toLowerCase() === formattedTitle
+    ) {
       return articleList.articles[i];
     }
   }
@@ -27,7 +32,6 @@ function getArt(paramTitle) {
 function edit(title, body, author) {
   let artTitle = getArt(title);
   if (title === artTitle.title) {
-    artTitle.title = title;
     artTitle.body = body;
     artTitle.author = author;
   }
@@ -42,7 +46,7 @@ function deleteArt(reqTitle) {
 
 //get completed list
 function retrieveAll() {
-  return articleList.articles;
+  return articleList;
 }
 
 module.exports = {

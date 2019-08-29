@@ -1,11 +1,13 @@
 {{!-- put --}}
 <a href="/">Home</a>
-<a href="/articles">Go Back to List</a>
+<a href="/articles">Go Back to List</a><br>
+
+<div>{{errorMsg}}</div><br>
 
 <form action="/articles/{{title}}?_method=PUT" method="POST">
-    Title: {{title}}<br>
-    Body: <input type="text" name="name" value="{{body}}"><br>
-    Author: $<input type="text" name="price" value="{{author}}"><br>
-    URL: <input type="text" name="inventory" value="{{urlTitle}}"><br>
+    Title: {{title}} <br>
+    Body: <input type="text" name="body" value="{{body}}"><br>
+    Author: <input type="text" name="author" value="{{author}}"><br>
+    URL: {{urlTitle}} <br>
     <input type="submit" value="Edit Article">
 </form>

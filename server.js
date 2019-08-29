@@ -7,9 +7,10 @@ const app = express();
 const articles = require("./routes/articles");
 const products = require("./routes/products");
 const methodOverride = require("method-override");
+const path = require("path");
 const PORT = 8080;
 
-// app.use(express.static("./public")); <-- uncomment this if you want to do css / index.html
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: false })); //order matters, by this being on top, anything below will read this.

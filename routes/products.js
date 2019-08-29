@@ -4,11 +4,13 @@ const router = express.Router();
 const prodDB = require("./../db/products.js");
 
 router.route("/new").get((req, res) => {
+  res.status(200);
   res.render("products/new");
 });
 
 router.route("/:id/edit").get((req, res) => {
   const getProdById = prodDB.getProd(req.params.id);
+  res.status(200);
   res.render("products/edit", getProdById);
 });
 

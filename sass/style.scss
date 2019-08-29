@@ -1,0 +1,44 @@
+.frontpage {
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 670px;
+  height: 670px;
+  background-image: linear-gradient(to right, navy, lightblue);
+  h1 {
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-size: 275%;
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    .articlesLink {
+      border-radius: 10px;
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      margin: 0px 20px 30px 20px;
+      h2 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .productsLink {
+      border-radius: 10px;
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      margin: 0px 20px 30px 20px;
+      h2 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
