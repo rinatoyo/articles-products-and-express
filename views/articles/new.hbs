@@ -1,0 +1,13 @@
+<a href="/">Home</a>
+<a href="/articles">Go to List</a>
+
+<h3>Create New Article</h3>
+
+<div>{{errorMsg}}</div> <br>
+
+<form action="/articles" method="post">
+    Title: <input type="text" name="title"><br>
+    Body: <input type="text" name="body"><br>
+    Author: <input type="text" name="author"><br>
+    <input type="submit" value="Submit New Article">
+</form>
